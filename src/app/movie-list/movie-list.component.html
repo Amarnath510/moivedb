@@ -1,0 +1,72 @@
+<div class="movie-list">
+  <div class="movie-list__search">
+    <input autofocus
+      class="form-control" 
+      type="text" 
+      placeholder="Search" 
+      aria-label="Search"
+      placeholder="Search by Movie, Language, Actor"
+      [(ngModel)]="query"
+      (input)="searchMovies($event.target.value)">
+  </div>
+  <div class="movie-list__sort">
+    <span class="movie-list__sort-by-label">Sort By</span>
+    <span *ngFor="let sortOption of SORT_BY_OPTIONS"
+          class="movie-list__sort-option" 
+          [class.movie-list__sort-option-is-active]="isSortActive(sortOption.key)"
+          (click)="sortBy(sortOption.key)">
+        {{ sortOption.label }}
+    </span>
+  </div>
+  <div class="movie-list__content">
+    <ul>
+      <li class="movie-list__movie" 
+          *ngFor="let movie of movieToDisplay">
+        <div class="row movie-list__movie-top-content">
+          <div class="col-4 movie-list__movie-title">
+            <a href="{{movie.movie_imdb_link}}" target="_blank">{{ movie.movie_title }} 
+              <span *ngIf="movie.title_year">({{movie.title_year}})</span>
+            </a>
+          </div>
+          <div class="col-3 movie-list__rating">
+            <span class="movie-list__movie-sub-heading">Content Rating: </span>
+            {{ movie.content_rating || 'N/A' }}
+          </div>
+          <div class="col-3 movie-list__country">
+            <span class="movie-list__movie-sub-heading">Country: </span>
+            {{ movie.country  || 'N/A' }}
+          </div>
+          <div class="col-2 movie-list__language">
+              <span class="movie-list__movie-sub-heading">Language: </span>
+            {{ movie.language  || 'N/A' }}
+          </div>
+        </div>
+        <div class="row movie-list__movie-bottom-content">
+          <div class="col-4 movie-list__director">
+            <span class="movie-list__movie-sub-heading">Director: </span>
+            {{ movie.director_name  || 'N/A' }}
+          </div>
+          <div class="col-3 movie-list__actors">
+            <span class="movie-list__movie-sub-heading">Actors: </span>
+            {{ movie.actor_1_name }}, {{ movie.actor_2_name }}
+          </div>
+          <div class="col-3 movie-list__genres">
+            <span class="movie-list__movie-sub-heading">Genres:  </span>
+            {{ getGenres(movie.genres) }}
+          </div>
+          <div class="col-2 movie-list__budget">
+            <span class="movie-list__movie-sub-heading">Budget:  </span>
+            {{ movie.budget  || 'N/A' }}</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+    <div class="hotel-list__pagination" *ngIf="totalMovies !== 0">
+      <ngb-pagination [collectionSize]="totalMovies"
+                      [page]="page"
+                      [maxSize]="MAX_SIZE"
+                      aria-label="pagination"
+                      (pageChange)="pageChanged($event)">
+      </ngb-pagination>
+    </div>
+</div>

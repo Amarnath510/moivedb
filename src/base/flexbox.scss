@@ -1,0 +1,45 @@
+@mixin display-flex-only() {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($grow: 0, $shrink: 1, $basis: auto) {
+  -ms-flex: $grow $shrink $basis;
+  -webkit-flex: $grow $shrink $basis;
+  flex: $grow $shrink $basis;
+}
+
+@mixin flex-direction($direction: row) {
+  -ms-flex-direction: $direction;
+  -webkit-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin justify-content-center() {
+  text-align: center;
+  -moz-text-align-last: center;
+  text-align-last: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+@mixin justify-content-space-between() {
+  text-align: justify;
+  -moz-text-align-last: justify;
+  text-align-last: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+@mixin justify-content-space-around() {
+  text-align: justify;
+  -moz-text-align-last: justify;
+  text-align-last: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+

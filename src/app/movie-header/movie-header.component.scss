@@ -1,0 +1,28 @@
+@import '../../styles';
+
+.movie-header {
+  @include display-flex-only;
+  @include justify-content-center;
+  background-color: $color-footer-dark;
+  margin-bottom: 1rem;
+}
+
+.movie-header__title {
+  @include flex(1, 1, 100%);
+}
+
+.movie-header__logo {
+  font-family: $font-family;
+  text-transform: uppercase;
+  font-size: $base-font-xxlg;
+  margin: 1rem;
+}
+
+.movie-header__logo a {
+  text-decoration: none;
+  color: orangered;
+}
+
+.movie-header__theme-selection {
+  padding: 1.5rem;
+}

@@ -1,0 +1,22 @@
+@import '../../styles.scss';
+
+.movie-footer {
+  @include display-flex-only;
+  @include justify-content-center;
+  background-color: $color-footer-dark;
+  margin-top: 1rem;
+}
+
+.movie-footer__logo {
+  font-family: $font-family;
+  text-transform: uppercase;
+  font-size: $base-font-xlg;
+  margin: 1rem;
+  padding: 1rem;
+  color: white;
+}
+
+.movie-footer__logo a {
+  color: orangered;
+  text-decoration: none;
+}

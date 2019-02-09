@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css");
+
+html, body {
+  height: 100vh;
+}
+
+$font-family: 'Lato', sans-serif;
+
+$base-font-sm: 10px;
+$base-font-regular: 12px;
+$base-font-lg: 14px;
+$base-font-xlg: 18px;
+$base-font-xxlg: 24px;
+$base-font-xxxlg: 36px;
+
+$color-footer-dark: #282c37;
+
+$theme-white: #FFF;
+$theme-sky: #6DD5FA;
+
+$list-color: #dbf6d4

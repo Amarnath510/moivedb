@@ -1,0 +1,12 @@
+<div class="movie-header">
+  <div class="movie-header__title">
+    <h1 class="movie-header__logo">
+      <a href="/">Sweeten MovieDB</a>
+    </h1>
+  </div>
+  <div class="movie-header__theme-selection">
+    <select (change)="changeTheme($event.target.value)">
+      <option *ngFor="let theme of themes" [value]="theme">{{ theme }}</option>
+    </select>
+  </div>
+</div>

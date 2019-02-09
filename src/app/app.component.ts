@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'utopus-moviedb';
+  title = 'Sweeten-moviedb';
+  currentTheme: string = 'White';
+
+  constructor() {}
+
+  updatedTheme(theme): void {
+    this.currentTheme = theme;
+  }
+
+  isTheme(theme): boolean {
+    return theme === this.currentTheme;
+  }
 }
